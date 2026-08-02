@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <!-- Instagramグラデーション -->
+    <linearGradient id="instaGradFav" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f09433"/>
+      <stop offset="25%" stop-color="#e6683c"/>
+      <stop offset="50%" stop-color="#dc2743"/>
+      <stop offset="75%" stop-color="#cc2366"/>
+      <stop offset="100%" stop-color="#bc1888"/>
+    </linearGradient>
+
+    <!-- 矢印グラデーション -->
+    <linearGradient id="arrowGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C6FF"/>
+      <stop offset="100%" stop-color="#0072FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- カメラ / アパチャー風アイコン（中央配置） -->
+  <g>
+    <!-- 外枠リング -->
+    <circle cx="50" cy="50" r="40" fill="none" stroke="url(#instaGradFav)" stroke-width="12"/>
+    <!-- レンズのアクセント -->
+    <path d="M 50 10 A 40 40 0 0 1 83 27 L 50 50 Z" fill="url(#instaGradFav)" opacity="0.2"/>
+    <path d="M 83 27 A 40 40 0 0 1 90 63 L 50 50 Z" fill="url(#instaGradFav)" opacity="0.3"/>
+    <!-- 閃光（ドット） -->
+    <circle cx="72" cy="28" r="4.5" fill="#00C6FF"/>
+    <!-- 中央の大きなダウンロード矢印 -->
+    <path d="M 50 20 L 50 62 M 33 46 L 50 63 L 67 46" fill="none" stroke="url(#arrowGradFav)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

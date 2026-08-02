@@ -1,0 +1,139 @@
+.logo {
+    width: 300px;
+}
+.logo > img {
+    width: 100%;
+}
+main {
+    height: 100dvh;
+}
+.top {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.top__message {
+    font-size: 40px;
+}
+
+.search {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.search__input-username {
+    width: 750px;
+    height: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.search__button {
+    background-image: url("./search_icon.png");
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+
+.user {
+    margin: 10px;
+}
+
+.user-error {
+    font-size: 30px;
+    font-weight: 600;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+.user-success {
+    width: 800px;
+    overflow: hidden;
+    background-color: #f2f3f5;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.user__link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 800px;
+    padding: 20px 20px;
+}
+
+.user__image {
+    border-radius: 50%;
+    width: 200px;
+}
+
+.user__username {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.user__fullname {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.user__count span {
+    font-weight: 500;
+}
+.user__link:hover {
+    transform: scale(1.05);
+    transition-duration: 0.2s;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.download__button {
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    background-position: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.download__button:hover {
+    background-color: #e2e2e2;
+}
+.hidden {
+    display: none;
+}
+
+.download__button:disabled {
+    background-color: #e2e2e2;
+    color: #ccc;
+}
