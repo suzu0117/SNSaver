@@ -1,4 +1,4 @@
-const server = "https://snsaver-api.onrender.com";
+const server = "https://snsaver-render-api.onrender.com";
 const searchButton = document.getElementById("search__button");
 const usernameInput = document.getElementById("search__input-username");
 
@@ -18,6 +18,7 @@ function resetUI() {
     spinner.classList.add("hidden");
 
     const downloadButton = document.getElementById("download__button");
+    downloadButton.disabled = false;
     downloadButton.classList.add("hidden");
 
     const user = document.getElementById("user");
@@ -65,9 +66,10 @@ async function displayProfile(response) {
     const json = await response.json();
     const profile = json.data.profile;
     const id = json.data.id;
+    const url = json.data.url;
     user.innerHTML = `
         <a class="user__link" href="https://www.instagram.com/${profile.username}" target="_blank">
-            <img class="user__image" src="${profile.url}"></img>
+            <img class="user__image" src="${url}"></img>
             <div class="user__prolile">
                 <p class="user__username" >${profile.username}</p>
                 <p class="user__fullname">${profile.full_name}</p>
