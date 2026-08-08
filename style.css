@@ -99,7 +99,10 @@ main {
     margin-bottom: 30px;
 }
 .user__count span {
-    font-weight: 500;
+    font-size: 1.2rem;
+}
+.user__count span {
+    font-weight: 600;
 }
 .user__link:hover {
     transform: scale(1.05);
