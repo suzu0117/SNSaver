@@ -45,7 +45,7 @@ async function displayProfile(response) {
     const status = response.status;
     const json = await response.json();
     const data = json.data;
-    const message = data.message;
+    const message = json.message;
 
     if (status !== 200) {
         user.classList.remove("user-success");
