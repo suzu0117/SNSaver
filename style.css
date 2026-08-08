@@ -87,7 +87,7 @@ main {
 .user__image-area {
     width: 50%;
 }
-.user__image > img {
+.user__image {
     border-radius: 50%;
     width: 200px;
 }
