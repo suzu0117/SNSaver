@@ -86,17 +86,17 @@ main {
 
 .user__image-area {
     width: 50%;
-}
-.user__image {
-    display: block;
-    width: 200px;
-    margin: 0 auto;
-    border-radius: 50%;
+    padding-left: 160px;
 }
 
 .user__prolile-area {
     width: 50%;
-    padding-left: 2rem;
+    padding-left: 32px;
+}
+
+.user__image {
+    width: 200px;
+    border-radius: 50%;
 }
 
 .user__username {
