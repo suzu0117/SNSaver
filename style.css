@@ -1,5 +1,6 @@
 body {
     font-family: "Times New Roman", "Noto Sans JP", sans-serif;
+    font-size: 1rem;
 }
 
 .logo {
@@ -11,15 +12,19 @@ body {
 main {
     height: 100dvh;
 }
+
 .top {
     text-align: center;
     margin-top: 5%;
 }
 
 .top__message {
-    font-size: 40px;
+    font-size: 2.8rem;
 }
 
+.top__description {
+    font-size: 1.2rem;
+}
 .search {
     width: 800px;
     margin: 0 auto;
@@ -36,6 +41,7 @@ main {
     height: 50px;
     padding-right: 20px;
     padding-left: 20px;
+    font-size: 1.2rem;
 }
 
 .search__button {
@@ -50,7 +56,7 @@ main {
 }
 
 .user-error {
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 600;
     width: fit-content;
     margin: 10px auto;
@@ -82,13 +88,13 @@ main {
 }
 
 .user__username {
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 .user__fullname {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 30px;
 }
@@ -121,7 +127,7 @@ main {
 .download__button {
     display: block;
     margin: 0 auto;
-    font-size: 18px;
+    font-size: 1.2rem;
     width: 150px;
     height: 50px;
     background-position: center;
