@@ -69,9 +69,11 @@ async function displayProfile(response) {
     const url = json.data.url;
     user.innerHTML = `
         <a class="user__link" href="https://www.instagram.com/${profile.username}" target="_blank">
-            <img class="user__image" src="${url}"></img>
-            <div class="user__prolile">
-                <p class="user__username" >${profile.username}</p>
+            <div class="user__image-area">
+                <img src="${url}" class="user__image"></img>
+            </div>
+            <div class="user__prolile-area">
+                <p class="user__username">${profile.username}</p>
                 <p class="user__fullname">${profile.full_name}</p>
                 <p class="user__count"><span>${profile.count}</span> posts</p>
                 ${profile.is_private ? '<p class="user__private">private account</p>' : ""}
