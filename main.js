@@ -42,31 +42,26 @@ async function getPorfile(username) {
 async function displayProfile(response) {
     const user = document.getElementById("user");
 
-    if (response.status === 404) {
+    const status = response.status;
+    const json = await response.json();
+    const data = json.data;
+    const message = data.message;
+
+    if (status !== 200) {
         user.classList.remove("user-success");
         user.classList.add("user-error");
         user.innerHTML = `
-            <p class="user__not-found">user not found</p>
+            <p class="user__error">${message}</p>
         `;
-        return;
-    }
-
-    if (response.status !== 200) {
-        user.classList.remove("user-success");
-        user.classList.add("user-error");
-        user.innerHTML = `
-            <p class="user__error">internal server error</p>
-        `;
-
         return;
     }
 
     user.classList.remove("user-error");
     user.classList.add("user-success");
-    const json = await response.json();
-    const profile = json.data.profile;
-    const id = json.data.id;
-    const url = json.data.url;
+
+    const profile = data.profile;
+    const id = data.id;
+    const url = data.url;
     user.innerHTML = `
         <a class="user__link" href="https://www.instagram.com/${profile.username}" target="_blank">
             <div class="user__image-area">
