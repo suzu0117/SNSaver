@@ -168,6 +168,14 @@ main {
         padding: 0 2%;
         font-size: 1rem;
     }
+    .top__message {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    .top__description {
+        font-size: 1rem;
+        font-weight: 400;
+    }
     .search {
         width: 100%;
     }
