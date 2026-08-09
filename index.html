@@ -9,38 +9,73 @@
         <title>SNSaver</title>
     </head>
     <body>
-        <header>
-            <div class="logo"><img src="./logo.svg" alt="" /></div>
-        </header>
-        <main>
-            <section class="top">
-                <h1 class="top__message">
-                    Download Instagram Photos and Videos
-                </h1>
-                <p class="top__description">
-                    Enter an Instagram username to download all public photos
-                    and videos as a ZIP file.
-                </p>
-            </section>
+        <div class="first-view">
+            <header>
+                <div class="logo"><img src="./logo.svg" alt="" /></div>
+            </header>
 
-            <section id="search" class="search">
-                <input
-                    type="text"
-                    id="search__input-username"
-                    class="search__input-username"
-                    placeholder="input username"
-                />
-                <button id="search__button" class="search__button"></button>
+            <main>
+                <section class="top">
+                    <h1 class="top__message">
+                        Download Instagram Photos and Videos
+                    </h1>
+                    <p class="top__description">
+                        Enter an Instagram username to download all public
+                        photos and videos as a ZIP file.
+                    </p>
+                </section>
+
+                <section id="search" class="search">
+                    <input
+                        type="text"
+                        id="search__input-username"
+                        class="search__input-username"
+                        placeholder="input username"
+                    />
+                    <button id="search__button" class="search__button"></button>
+                </section>
+                <section id="user" class="user"></section>
+                <section id="download" class="download">
+                    <button
+                        id="download__button"
+                        class="download__button hidden"
+                    >
+                        Download
+                    </button>
+                </section>
+                <div id="spinner" class="spinner hidden"></div>
+            </main>
+        </div>
+
+        <footer>
+            <section id="contact" class="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <form action="" class="contact-form">
+                    <div class="contact-form__item">
+                        <label for="" class="contact-form__label">Name</label>
+                        <input type="name" class="contact-form__input" />
+                    </div>
+                    <div class="contact-form__item">
+                        <label for="" class="contact-form__label">E-mail</label>
+                        <input type="email" class="contact-form__input" />
+                    </div>
+                    <div class="contact-form__item">
+                        <label for="" class="contact-form__label">
+                            Message
+                        </label>
+                        <textarea
+                            name=""
+                            id=""
+                            rows="20"
+                            class="contact-form__textarea"
+                        ></textarea>
+                    </div>
+                    <button class="contact-form__button">Submit</button>
+                </form>
             </section>
-            <section id="user" class="user"></section>
-            <section id="download" class="download">
-                <button id="download__button" class="download__button hidden">
-                    Download
-                </button>
-            </section>
-            <div id="spinner" class="spinner hidden"></div>
-        </main>
-        <footer></footer>
+            <span class="copyright">© 2026 snsaver</span>
+        </footer>
         <script src="./main.js"></script>
     </body>
 </html>
