@@ -162,3 +162,42 @@ main {
     background-color: #e2e2e2;
     color: #ccc;
 }
+
+@media (max-width: 767px) {
+    body {
+        padding: 0 2%;
+        font-size: 1rem;
+    }
+    .search {
+        width: 100%;
+    }
+    .search__input-username {
+        width: calc(100% - 50px);
+    }
+
+    .search__button {
+    }
+
+    .user-success {
+        width: 100%;
+    }
+    .user__link {
+        width: 100%;
+    }
+    .user__image-area {
+        width: 50%;
+        padding-left: 0px;
+    }
+    .user__prolile-area {
+        width: 50%;
+        padding-left: 20px;
+    }
+    .user__image {
+        width: 80%;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+@media (max-width: 1024px) {
+}
