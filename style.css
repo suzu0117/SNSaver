@@ -198,6 +198,17 @@ main {
         margin: 0 auto;
         display: block;
     }
+    .user__username {
+        font-size: 1.3rem;
+    }
+
+    .user__fullname {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .user__count {
+        font-size: 1.1rem;
+    }
 }
 @media (max-width: 1024px) {
 }
