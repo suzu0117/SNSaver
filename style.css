@@ -4,6 +4,7 @@ body {
         sans-serif;
     font-size: 1rem;
     color: #0c1014;
+    padding: 0 2%;
 }
 .first-view {
     display: flex;
