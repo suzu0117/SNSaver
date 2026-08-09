@@ -186,9 +186,6 @@ main {
         width: calc(100% - 50px);
     }
 
-    .search__button {
-    }
-
     .user-success {
         width: 100%;
     }
