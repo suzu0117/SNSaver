@@ -151,6 +151,7 @@ main {
     display: block;
     margin: 0 auto;
     font-size: 1.2rem;
+    font-weight: 600;
     width: 150px;
     height: 50px;
     background-position: center;
@@ -214,6 +215,7 @@ footer {
     display: block;
     margin: 0 0 0 auto;
     font-size: 1rem;
+    font-weight: 600;
     width: 120px;
     height: 40px;
     background-position: center;
