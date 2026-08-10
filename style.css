@@ -292,3 +292,7 @@ footer {
 }
 @media (max-width: 1024px) {
 }
+
+.media-type:checked + span {
+    color: aqua;
+}

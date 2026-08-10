@@ -1,11 +1,33 @@
 const server = "https://snsaver-render-api.onrender.com";
 const searchButton = document.getElementById("search__button");
 const usernameInput = document.getElementById("search__input-username");
+const mediaTypeAll = document.getElementById("media-type--all");
+const mediaTypeImages = document.getElementById("media-type--images");
+const mediaTypeVideos = document.getElementById("media-type--videos");
 
 searchButton.addEventListener("click", async () => {
     resetUI();
     const username = usernameInput.value;
-    const response = await getPorfile(username);
+    let imagesFlag = false;
+    let videosFlag = false;
+
+    if (mediaTypeAll.checked) {
+        imagesFlag = true;
+        videosFlag = true;
+    }
+
+    if (mediaTypeImages.checked) {
+        imagesFlag = true;
+        videosFlag = false;
+    }
+
+    if (mediaTypeVideos.checked) {
+        imagesFlag = false;
+        videosFlag = true;
+    }
+
+    const response = await getPorfile(username, imagesFlag, videosFlag);
+
     const data = await displayProfile(response);
     if (!checkProfile(data)) {
         return;
@@ -32,7 +54,11 @@ async function getPorfile(username) {
     const response = await fetch(`${server}/api/search`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: username }),
+        body: JSON.stringify({
+            username,
+            imagesFlag,
+            videosFlag,
+        }),
     });
 
     spinner.classList.add("hidden");
