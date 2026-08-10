@@ -137,7 +137,7 @@ main {
     border-top: 4px solid #333;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    margin: 0 auto;
+    margin: 20px auto 0;
 }
 
 @keyframes spin {
