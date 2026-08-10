@@ -64,23 +64,25 @@ main {
 }
 
 .user {
-    margin: 10px;
+    display: none;
 }
 
 .user-error {
+    display: block;
+    width: fit-content;
+    margin: 10px auto 0;
     font-size: 1.875rem;
     font-weight: 600;
-    width: fit-content;
-    margin: 10px auto;
 }
 
 .user-success {
+    display: block;
     width: 800px;
+    margin: 10px auto 0;
     overflow: hidden;
-    background-color: #f2f3f5;
     border: 1px solid #e2e2e2;
     border-radius: 5px;
-    margin: 10px auto;
+    background-color: #f2f3f5;
 }
 
 .user__link {
