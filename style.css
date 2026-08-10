@@ -37,7 +37,8 @@ main {
 }
 
 .search {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -48,7 +49,7 @@ main {
 }
 
 .search__input-username {
-    width: 750px;
+    max-width: 750px;
     height: 50px;
     padding-right: 20px;
     padding-left: 20px;
@@ -78,7 +79,8 @@ main {
 
 .user-success {
     display: block;
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     margin: 10px auto 0;
     overflow: hidden;
     border: 1px solid #e2e2e2;
@@ -168,6 +170,7 @@ main {
 }
 .download__button:hover {
     background-color: #e2e2e2;
+    transition-duration: 0.1s;
 }
 .hidden {
     display: none;
@@ -232,6 +235,7 @@ footer {
 }
 .contact-form__button:hover {
     background-color: #e2e2e2;
+    transition-duration: 0.1s;
 }
 .copyright {
     margin-top: 10px;
@@ -260,7 +264,11 @@ footer {
     cursor: pointer;
     text-align: center;
 }
-
+.media-type__item:hover + span {
+    background-color: #e2e2e2;
+    color: #0c1014;
+    transition-duration: 0.1s;
+}
 .media-type__item:checked + span {
     background-color: #e2e2e2;
     color: #0c1014;
