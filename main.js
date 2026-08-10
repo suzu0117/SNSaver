@@ -47,7 +47,7 @@ function resetUI() {
     user.innerHTML = "";
 }
 
-async function getPorfile(username) {
+async function getPorfile(username, imagesFlag, videosFlag) {
     spinner = document.getElementById("spinner");
     spinner.classList.remove("hidden");
 
