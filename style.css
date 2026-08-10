@@ -152,7 +152,9 @@ main {
 }
 .download__button {
     display: block;
-    margin: 0 auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 1.2rem;
     font-weight: 600;
     width: 150px;
