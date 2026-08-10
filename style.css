@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     min-height: 100svh;
 }
+
 .logo {
     width: 300px;
 }
@@ -25,6 +26,11 @@ main {
 .top {
     text-align: center;
     margin-top: 5%;
+}
+@media (max-height: 700px) {
+    .top {
+        margin-top: 1%;
+    }
 }
 
 .top__message {
