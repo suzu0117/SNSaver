@@ -44,6 +44,8 @@ function resetUI() {
     downloadButton.classList.add("hidden");
 
     const user = document.getElementById("user");
+    user.classList.remove("user-success");
+    user.classList.remove("user-error");
     user.innerHTML = "";
 }
 
