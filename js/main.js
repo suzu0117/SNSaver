@@ -195,7 +195,7 @@ contactFormButton.addEventListener("click", async () => {
     const message = form.message.value;
     const datetime = new Date();
 
-    fetch(`${server}/contact`, {
+    fetch(`${server}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
