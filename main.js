@@ -36,8 +36,8 @@ searchButton.addEventListener("click", async () => {
 });
 
 function resetUI() {
-    const spinner = document.getElementById("spinner");
-    spinner.classList.add("hidden");
+    const loading = document.getElementById("loading");
+    loading.classList.add("hidden");
 
     const downloadButton = document.getElementById("download__button");
     downloadButton.disabled = false;
@@ -50,8 +50,10 @@ function resetUI() {
 }
 
 async function getPorfile(username, imagesFlag, videosFlag) {
-    spinner = document.getElementById("spinner");
-    spinner.classList.remove("hidden");
+    const loading = document.getElementById("loading");
+    const loadingMessage = document.getElementById("loading-message");
+    loadingMessage.innerHTML = "Checking user...";
+    loading.classList.remove("hidden");
 
     const response = await fetch(`${server}/api/search`, {
         method: "POST",
@@ -63,7 +65,7 @@ async function getPorfile(username, imagesFlag, videosFlag) {
         }),
     });
 
-    spinner.classList.add("hidden");
+    loading.classList.add("hidden");
     return response;
 }
 
@@ -128,8 +130,11 @@ function checkProfile(data) {
 }
 
 async function checkJob(id) {
-    const spinner = document.getElementById("spinner");
-    spinner.classList.remove("hidden");
+    const loading = document.getElementById("loading");
+    const loadingMessage = Document.getElementById("loading-message");
+    loadingMessage.innerHTML = "Preparing download... Please wait.";
+    loading.classList.remove("hidden");
+
     const downloadButton = document.getElementById("download__button");
     while (true) {
         const response = await fetch(`${server}/api/status/${id}`);
@@ -137,12 +142,12 @@ async function checkJob(id) {
         const status = json.status;
 
         if (status === "FAILED") {
-            spinner.classList.add("hidden");
+            loading.classList.add("hidden");
             break;
         }
 
         if (status === "COMPLETED") {
-            spinner.classList.add("hidden");
+            loading.classList.add("hidden");
             downloadButton.classList.remove("hidden");
             downloadButton.onclick = () => {
                 downloadButton.disabled = true;
