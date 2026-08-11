@@ -4,6 +4,7 @@ const usernameInput = document.getElementById("username-input");
 const mediaTypeAll = document.getElementById("media-type-all");
 const mediaTypeImages = document.getElementById("media-type-images");
 const mediaTypeVideos = document.getElementById("media-type-videos");
+const contactFormButton = document.getElementById("contact-form-button");
 
 searchButton.addEventListener("click", async () => {
     resetUI();
@@ -186,3 +187,22 @@ async function checkJob(id) {
     }
     return;
 }
+
+contactFormButton.addEventListener("click", async () => {
+    const form = document.getElementById("contact-from");
+    const name = form.name.value;
+    const mail = form.mail.value;
+    const message = form.message.value;
+    const datetime = new Date();
+
+    fetch(`${server}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name,
+            mail,
+            message,
+            datetime,
+        }),
+    });
+});
