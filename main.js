@@ -146,8 +146,12 @@ async function checkJob(id) {
             const response = await fetch(`${server}/api/status/${id}`);
             const json = await response.json();
             const status = json.status;
-
-            if (status === "FAILED") {
+            if(!status) {
+                loading.classList.add("hidden");
+                errorMessage.classList.remove("hidden");
+                break;
+            }
+            if (status === "FAILED"||) {
                 loading.classList.add("hidden");
                 errorMessage.classList.remove("hidden");
                 break;
