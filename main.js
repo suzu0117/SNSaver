@@ -1,9 +1,9 @@
 const server = "https://snsaver-render-api.onrender.com";
-const searchButton = document.getElementById("search__button");
-const usernameInput = document.getElementById("search__input-username");
-const mediaTypeAll = document.getElementById("media-type--all");
-const mediaTypeImages = document.getElementById("media-type--images");
-const mediaTypeVideos = document.getElementById("media-type--videos");
+const searchButton = document.getElementById("search-button");
+const usernameInput = document.getElementById("username-input");
+const mediaTypeAll = document.getElementById("media-type-all");
+const mediaTypeImages = document.getElementById("media-type-images");
+const mediaTypeVideos = document.getElementById("media-type-videos");
 
 searchButton.addEventListener("click", async () => {
     resetUI();

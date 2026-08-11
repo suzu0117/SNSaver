@@ -24,52 +24,58 @@
                         photos and videos as a ZIP file.
                     </p>
                 </section>
-                <div class="media-type">
-                    <label>
+
+                <section id="input-area" class="input-area">
+                    <div class="media-type">
+                        <label>
+                            <input
+                                type="radio"
+                                id="media-type-all"
+                                name="media-type"
+                                checked
+                                class="media-type__item"
+                            />
+                            <span>All</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                id="media-type-images"
+                                name="media-type"
+                                class="media-type__item"
+                            />
+                            <span>Images</span>
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                id="media-type-videos"
+                                name="media-type"
+                                class="media-type__item"
+                            />
+                            <span>Videos</span>
+                        </label>
+                    </div>
+
+                    <div class="username">
                         <input
-                            type="radio"
-                            id="media-type--all"
-                            name="media-type"
-                            checked
-                            class="media-type__item"
+                            type="text"
+                            id="username-input"
+                            class="username__input"
+                            placeholder="input username"
                         />
-                        <span>All</span>
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            id="media-type--images"
-                            name="media-type"
-                            class="media-type__item"
-                        />
-                        <span>Images</span>
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            id="media-type--videos"
-                            name="media-type"
-                            class="media-type__item"
-                        />
-                        <span>Videos</span>
-                    </label>
-                </div>
-                <section id="search" class="search">
-                    <input
-                        type="text"
-                        id="search__input-username"
-                        class="search__input-username"
-                        placeholder="input username"
-                    />
-                    <button id="search__button" class="search__button"></button>
+                        <button
+                            id="search-button"
+                            class="username__search-button"
+                        ></button>
+                    </div>
                 </section>
 
                 <section id="user" class="user"></section>
                 <section id="download" class="download">
-                    <button
-                        id="download__button"
-                        class="download__button hidden"
-                    >
+                    <button id="download__button" class="download__button">
                         Download
                     </button>
                 </section>

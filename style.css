@@ -15,6 +15,7 @@ body {
 .logo {
     width: 300px;
 }
+
 .logo > img {
     width: 100%;
 }
@@ -35,8 +36,48 @@ main {
 .top__description {
     font-size: 1.2rem;
 }
+.input-area {
+    margin-top: 10px;
+}
+.media-type {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
-.search {
+.media-type__item {
+    width: 0;
+    height: 0;
+    display: inline;
+}
+
+.media-type__item + span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 120px;
+    height: 40px;
+    background-position: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.media-type__item:hover + span {
+    background-color: #e2e2e2;
+    color: #0c1014;
+    transition-duration: 0.1s;
+}
+
+.media-type__item:checked + span {
+    background-color: #e2e2e2;
+    color: #0c1014;
+}
+
+.username {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -48,17 +89,16 @@ main {
     margin-top: 10px;
 }
 
-.search__input-username {
-    max-width: 750px;
+.username__input {
+    flex: 1;
     height: 50px;
     padding-right: 20px;
     padding-left: 20px;
     font-size: 1.2rem;
-}
-.search__input-username:focus {
     outline: none;
 }
-.search__button {
+
+.username__search-button {
     background-image: url("./search_icon.png");
     background-size: contain;
     width: 50px;
@@ -89,50 +129,63 @@ main {
 }
 
 .user__link {
+    width: 100%;
+    max-width: 800px;
     display: flex;
     text-decoration: none;
     color: black;
     align-items: center;
     justify-content: center;
-    width: 800px;
+
     padding: 20px 20px;
 }
 
-.user__image-area {
-    width: 50%;
-    padding-left: 160px;
+.user__link:hover {
+    transform: scale(1.05);
+    transition-duration: 0.2s;
 }
 
-.user__prolile-area {
-    width: 50%;
-    padding-left: 32px;
+.user__image-area {
+    width: 45%;
 }
 
 .user__image {
     width: 200px;
+    display: block;
     border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user__prolile-area {
+    width: 55%;
 }
 
 .user__username {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    overflow-wrap: anywhere;
 }
 
 .user__fullname {
+    margin-top: 10px;
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 30px;
+    overflow-wrap: anywhere;
 }
+
 .user__count {
+    margin-top: 30px;
     font-size: 1.2rem;
 }
+
 .user__count span {
     font-weight: 600;
 }
-.user__link:hover {
-    transform: scale(1.05);
-    transition-duration: 0.2s;
+
+.user__private {
+    margin-top: 10px;
+    font-size: 1.1rem;
 }
 
 .spinner {
@@ -168,10 +221,12 @@ main {
     cursor: pointer;
     text-align: center;
 }
+
 .download__button:hover {
     background-color: #e2e2e2;
     transition-duration: 0.1s;
 }
+
 .hidden {
     display: none;
 }
@@ -244,36 +299,6 @@ footer {
     text-align: center;
 }
 
-.media-type {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-.media-type__item + span {
-    display: flex;
-    margin: 0 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    font-weight: 600;
-    width: 120px;
-    height: 40px;
-    background-position: center;
-    border: 1px solid #e2e2e2;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-}
-.media-type__item:hover + span {
-    background-color: #e2e2e2;
-    color: #0c1014;
-    transition-duration: 0.1s;
-}
-.media-type__item:checked + span {
-    background-color: #e2e2e2;
-    color: #0c1014;
-}
-
 /*タブレット横向き*/
 @media (max-height: 700px) {
     .top {
@@ -287,6 +312,13 @@ footer {
         padding: 0 2%;
         font-size: 1rem;
     }
+    .top__message {
+        font-size: 2.5rem;
+    }
+
+    .top__description {
+        font-size: 1.1rem;
+    }
 }
 
 /*スマホ縦向き*/
@@ -295,20 +327,30 @@ footer {
         padding: 0 2%;
         font-size: 1rem;
     }
+
     .logo {
         width: 200px;
     }
+
     .top__message {
         font-size: 1.3rem;
         font-weight: 600;
     }
+
     .top__description {
         font-size: 1rem;
         font-weight: 400;
     }
+    .media-type {
+        flex-direction: column;
+    }
+    .media-type__item + span {
+        width: 100%;
+    }
     .search {
         width: 100%;
     }
+
     .search__input-username {
         width: calc(100% - 50px);
     }
@@ -316,23 +358,28 @@ footer {
     .user-success {
         width: 100%;
     }
+
     .user__link {
         width: 100%;
     }
+
     .user__image-area {
         width: 40%;
         padding-left: 0px;
     }
+
     .user__prolile-area {
         width: 60%;
         padding-left: 20px;
     }
+
     .user__image {
         width: 80%;
         border-radius: 50%;
         margin: 0 auto;
         display: block;
     }
+
     .user__username {
         font-size: 1.3rem;
     }
