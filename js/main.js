@@ -8,7 +8,24 @@ const contactFormButton = document.getElementById("contact-form-button");
 
 searchButton.addEventListener("click", async () => {
     resetUI();
-    const username = usernameInput.value;
+    let username;
+    try {
+        const url = new URL(usernameInput.value);
+        if (url.hostname === "www.instagram.com") {
+            username = url.pathname.split("/")[1];
+        }
+    } catch {
+        username = usernameInput.value;
+    }
+
+    if (!username) {
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.classList.remove("hidden");
+        errorMessage.innerHTML =
+            "Please enter an Instagram username or profile URL.";
+        return;
+    }
+
     let imagesFlag = false;
     let videosFlag = false;
 
