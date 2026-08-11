@@ -42,7 +42,7 @@ function resetUI() {
     const errorMessage = document.getElementById("error-message");
     errorMessage.classList.add("hidden");
 
-    const downloadButton = document.getElementById("download__button");
+    const downloadButton = document.getElementById("download-button");
     downloadButton.disabled = false;
     downloadButton.classList.add("hidden");
 
