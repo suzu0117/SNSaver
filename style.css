@@ -211,7 +211,12 @@ main {
     margin-top: 10px;
     text-align: center;
 }
-
+.error-message {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 600;
+}
 .download-button {
     display: block;
     margin-top: 10px;
