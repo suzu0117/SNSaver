@@ -131,7 +131,7 @@ function checkProfile(data) {
 
 async function checkJob(id) {
     const loading = document.getElementById("loading");
-    const loadingMessage = Document.getElementById("loading-message");
+    const loadingMessage = document.getElementById("loading-message");
     loadingMessage.innerHTML = "Preparing download... Please wait.";
     loading.classList.remove("hidden");
 
