@@ -113,19 +113,14 @@ async function displayProfile(response) {
 }
 
 function checkProfile(data) {
-    const download = document.getElementById("download");
+    const errorMessage = document.getElementById("error-message");
     if (!data.profile) {
-        console.error("Unexpected profile data:", data);
-        download.innerHTML = `
-            <p>An unexpected error occurred.</p>
-        `;
+        errorMessage.classList.remove("hidden");
         return false;
     }
 
     if (data.profile.is_private) {
-        download.innerHTML = `
-            <p>Can't download because the account is private.</p>
-        `;
+        errorMessage.classList.remove("hidden");
         return false;
     }
 
