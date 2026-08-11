@@ -1,0 +1,420 @@
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif;
+    font-size: 1rem;
+    color: #0c1014;
+    padding: 0 2%;
+}
+.first-view {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+}
+
+.logo {
+    width: 300px;
+}
+
+.logo > img {
+    width: 100%;
+}
+
+main {
+    flex: 1;
+}
+
+.top {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.top__message {
+    font-size: 2.8rem;
+}
+
+.top__description {
+    font-size: 1.2rem;
+}
+.input-area {
+    margin-top: 10px;
+}
+.media-type {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.media-type__item {
+    width: 0;
+    height: 0;
+    display: inline;
+}
+
+.media-type__item + span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 120px;
+    height: 40px;
+    background-position: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.media-type__item:hover + span {
+    background-color: #e2e2e2;
+    color: #0c1014;
+    transition-duration: 0.1s;
+}
+
+.media-type__item:checked + span {
+    background-color: #e2e2e2;
+    color: #0c1014;
+}
+
+.username {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.username__input {
+    flex: 1;
+    height: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.username__search-button {
+    background-image: url("../image/search_icon.png");
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+
+.user {
+    display: none;
+}
+
+.user-error {
+    display: block;
+    width: fit-content;
+    margin: 10px auto 0;
+    font-size: 1.875rem;
+    font-weight: 600;
+}
+
+.user-success {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto 0;
+    overflow: hidden;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    background-color: #f2f3f5;
+}
+
+.user__link {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 20px;
+}
+
+.user__link:hover {
+    transform: scale(1.05);
+    transition-duration: 0.2s;
+}
+
+.user__image-area {
+    width: 45%;
+}
+
+.user__image {
+    width: 200px;
+    display: block;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user__prolile-area {
+    width: 55%;
+}
+
+.user__username {
+    font-size: 1.5rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.user__fullname {
+    margin-top: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.user__count {
+    margin-top: 30px;
+    font-size: 1.2rem;
+}
+
+.user__count span {
+    font-weight: 600;
+}
+
+.user__private {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.loading__spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto 0;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading__message {
+    margin-top: 10px;
+    text-align: center;
+}
+.error-message {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 600;
+}
+.download-button {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 150px;
+    height: 50px;
+    background-position: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.download-button:hover {
+    background-color: #e2e2e2;
+    transition-duration: 0.1s;
+}
+
+.download-button:disabled {
+    background-color: #e2e2e2;
+    color: #ccc;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.section-title {
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.contact-form {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.contact-form__label {
+    font-weight: 600;
+    padding-top: 0.5rem;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+    width: 80%;
+    border: solid 1px #e2e2e2;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.contact-form__input {
+    height: 2rem;
+}
+
+.contact-form__textarea {
+    resize: none;
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    outline: none;
+}
+
+.contact-form__button {
+    display: block;
+    margin: 0 0 0 auto;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 120px;
+    height: 40px;
+    background-position: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contact-form__button:hover {
+    background-color: #e2e2e2;
+    transition-duration: 0.1s;
+}
+
+.copyright {
+    margin-top: 10px;
+    color: #6a717a;
+    display: block;
+    text-align: center;
+}
+
+/*タブレット横向き*/
+@media (max-height: 700px) {
+    .top {
+        margin-top: 1%;
+    }
+}
+
+/*タブレット縦向き*/
+@media (max-width: 1024px) {
+    body {
+        padding: 0 2%;
+        font-size: 1rem;
+    }
+    .top__message {
+        font-size: 2.5rem;
+    }
+
+    .top__description {
+        font-size: 1.1rem;
+    }
+}
+
+/*スマホ縦向き*/
+@media (max-width: 767px) {
+    body {
+        padding: 0 2%;
+        font-size: 1rem;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .top__message {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .top__description {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .media-type {
+        flex-direction: column;
+    }
+
+    .media-type__item + span {
+        width: 100%;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search__input-username {
+        width: calc(100% - 50px);
+    }
+
+    .user-success {
+        width: 100%;
+    }
+
+    .user__link {
+        width: 100%;
+    }
+
+    .user__image-area {
+        width: 40%;
+        padding-left: 0px;
+    }
+
+    .user__prolile-area {
+        width: 60%;
+        padding-left: 20px;
+    }
+
+    .user__image {
+        width: 80%;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .user__username {
+        font-size: 1.3rem;
+    }
+
+    .user__fullname {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .user__count {
+        font-size: 1.1rem;
+    }
+}
