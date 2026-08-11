@@ -1,14 +1,11 @@
 const server = "https://snsaver-render-api.onrender.com";
-const searchButton = document.getElementById("search-button");
-const usernameInput = document.getElementById("username-input");
-const mediaTypeAll = document.getElementById("media-type-all");
-const mediaTypeImages = document.getElementById("media-type-images");
-const mediaTypeVideos = document.getElementById("media-type-videos");
-const contactFormButton = document.getElementById("contact-form-button");
 
+const searchButton = document.getElementById("search-button");
 searchButton.addEventListener("click", async () => {
-    resetUI();
+    initialize();
+
     let username;
+    const usernameInput = document.getElementById("username-input");
     try {
         const url = new URL(usernameInput.value);
         if (url.hostname === "www.instagram.com") {
@@ -29,16 +26,19 @@ searchButton.addEventListener("click", async () => {
     let imagesFlag = false;
     let videosFlag = false;
 
+    const mediaTypeAll = document.getElementById("media-type-all");
     if (mediaTypeAll.checked) {
         imagesFlag = true;
         videosFlag = true;
     }
 
+    const mediaTypeImages = document.getElementById("media-type-images");
     if (mediaTypeImages.checked) {
         imagesFlag = true;
         videosFlag = false;
     }
 
+    const mediaTypeVideos = document.getElementById("media-type-videos");
     if (mediaTypeVideos.checked) {
         imagesFlag = false;
         videosFlag = true;
@@ -47,28 +47,30 @@ searchButton.addEventListener("click", async () => {
     const response = await getPorfile(username, imagesFlag, videosFlag);
 
     const data = await displayProfile(response);
+
     if (!checkProfile(data)) {
         return;
     }
+
     checkJob(data.id);
 });
 
-function resetUI() {
+function initialize() {
     const loading = document.getElementById("loading");
     loading.classList.add("hidden");
 
     const errorMessage = document.getElementById("error-message");
+    errorMessage.innerHTML = "";
     errorMessage.classList.add("hidden");
-    errorMessage.innerHTML = "An unexpected error occurred.";
 
     const downloadButton = document.getElementById("download-button");
     downloadButton.disabled = false;
     downloadButton.classList.add("hidden");
 
     const user = document.getElementById("user");
+    user.innerHTML = "";
     user.classList.remove("user-success");
     user.classList.remove("user-error");
-    user.innerHTML = "";
 }
 
 async function getPorfile(username, imagesFlag, videosFlag) {
@@ -153,6 +155,7 @@ async function checkJob(id) {
     const loading = document.getElementById("loading");
     const loadingMessage = document.getElementById("loading-message");
     const errorMessage = document.getElementById("error-message");
+
     loadingMessage.innerHTML = "Waiting in queue... Please wait.";
     loading.classList.remove("hidden");
 
@@ -166,12 +169,14 @@ async function checkJob(id) {
 
             if (!status) {
                 loading.classList.add("hidden");
+                errorMessage.innerHTML = "An unexpected error occurred.";
                 errorMessage.classList.remove("hidden");
                 break;
             }
 
             if (status === "FAILED") {
                 loading.classList.add("hidden");
+                errorMessage.innerHTML = "An unexpected error occurred.";
                 errorMessage.classList.remove("hidden");
                 break;
             }
@@ -196,6 +201,7 @@ async function checkJob(id) {
         } catch {
             count += 1;
             if (count === 3) {
+                errorMessage.innerHTML = "An unexpected error occurred.";
                 errorMessage.classList.remove("hidden");
                 break;
             }
@@ -205,6 +211,7 @@ async function checkJob(id) {
     return;
 }
 
+const contactFormButton = document.getElementById("contact-form-button");
 contactFormButton.addEventListener("click", async () => {
     const form = document.getElementById("contact-from");
     const name = form.name.value;
