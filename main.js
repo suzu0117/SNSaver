@@ -39,6 +39,9 @@ function resetUI() {
     const loading = document.getElementById("loading");
     loading.classList.add("hidden");
 
+    const errorMessage = document.getElementById("error-message");
+    errorMessage.classList.add("hidden");
+
     const downloadButton = document.getElementById("download__button");
     downloadButton.disabled = false;
     downloadButton.classList.add("hidden");
@@ -132,34 +135,49 @@ function checkProfile(data) {
 async function checkJob(id) {
     const loading = document.getElementById("loading");
     const loadingMessage = document.getElementById("loading-message");
+    const errorMessage = document.getElementById("error-message");
     loadingMessage.innerHTML = "Waiting in queue... Please wait.";
     loading.classList.remove("hidden");
 
     const downloadButton = document.getElementById("download__button");
+    let catchcount = 0;
     while (true) {
-        const response = await fetch(`${server}/api/status/${id}`);
-        const json = await response.json();
-        const status = json.status;
-        if (status === "RUNNING") {
-            loadingMessage.innerHTML = "Preparing download... Please wait.";
-        }
-        if (status === "FAILED") {
-            loading.classList.add("hidden");
-            break;
-        }
+        try {
+            const response = await fetch(`${server}/api/status/${id}`);
+            const json = await response.json();
+            const status = json.status;
 
-        if (status === "COMPLETED") {
-            loading.classList.add("hidden");
-            downloadButton.classList.remove("hidden");
-            downloadButton.onclick = () => {
-                downloadButton.disabled = true;
-                window.location.href = `${json.url}`;
-            };
-            break;
-        }
+            if (status === "FAILED") {
+                loading.classList.add("hidden");
+                errorMessage.classList.remove("hidden");
+                break;
+            }
 
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+            if (status === "COMPLETED") {
+                loading.classList.add("hidden");
+                downloadButton.classList.remove("hidden");
+                downloadButton.onclick = () => {
+                    downloadButton.disabled = true;
+                    window.location.href = `${json.url}`;
+                };
+                break;
+            }
+
+            if (status === "RUNNING") {
+                loadingMessage.innerHTML = "Preparing download... Please wait.";
+            }
+
+            catchcount = 0;
+
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+        } catch {
+            count += 1;
+            if (count === 3) {
+                errorMessage.classList.remove("hidden");
+                break;
+            }
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+        }
     }
-
     return;
 }

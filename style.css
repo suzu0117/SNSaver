@@ -212,7 +212,7 @@ main {
     text-align: center;
 }
 
-.download__button {
+.download-button {
     display: block;
     margin-top: 10px;
     margin-left: auto;
@@ -228,42 +228,47 @@ main {
     text-align: center;
 }
 
-.download__button:hover {
+.download-button:hover {
     background-color: #e2e2e2;
     transition-duration: 0.1s;
+}
+
+.download-button:disabled {
+    background-color: #e2e2e2;
+    color: #ccc;
 }
 
 .hidden {
     display: none;
 }
 
-.download__button:disabled {
-    background-color: #e2e2e2;
-    color: #ccc;
-}
-
 footer {
     padding-top: 10px;
     padding-bottom: 20px;
 }
+
 .section-title {
     font-weight: 600;
     text-align: center;
     font-size: 1.5rem;
 }
+
 .contact-form {
     width: 800px;
     margin: 0 auto;
 }
+
 .contact-form__item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
+
 .contact-form__label {
     font-weight: 600;
     padding-top: 0.5rem;
 }
+
 .contact-form__input,
 .contact-form__textarea {
     width: 80%;
@@ -271,16 +276,20 @@ footer {
     border-radius: 5px;
     padding: 0.5rem;
 }
+
 .contact-form__input {
     height: 2rem;
 }
+
 .contact-form__textarea {
     resize: none;
 }
+
 .contact-form__input:focus,
 .contact-form__textarea:focus {
     outline: none;
 }
+
 .contact-form__button {
     display: block;
     margin: 0 0 0 auto;
@@ -294,10 +303,12 @@ footer {
     cursor: pointer;
     text-align: center;
 }
+
 .contact-form__button:hover {
     background-color: #e2e2e2;
     transition-duration: 0.1s;
 }
+
 .copyright {
     margin-top: 10px;
     color: #6a717a;
@@ -347,12 +358,15 @@ footer {
         font-size: 1rem;
         font-weight: 400;
     }
+
     .media-type {
         flex-direction: column;
     }
+
     .media-type__item + span {
         width: 100%;
     }
+
     .search {
         width: 100%;
     }
@@ -394,6 +408,7 @@ footer {
         font-size: 1rem;
         margin-bottom: 10px;
     }
+
     .user__count {
         font-size: 1.1rem;
     }
