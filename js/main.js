@@ -41,7 +41,7 @@ function resetUI() {
 
     const errorMessage = document.getElementById("error-message");
     errorMessage.classList.add("hidden");
-
+    errorMessage.innerHTML = "An unexpected error occurred.";
     const downloadButton = document.getElementById("download-button");
     downloadButton.disabled = false;
     downloadButton.classList.add("hidden");
@@ -120,7 +120,9 @@ function checkProfile(data) {
     }
 
     if (data.profile.is_private) {
-        errorMessage.classList.remove("hidden");
+        errorMessage.innerHTML = `
+            Can't download because the account is private.
+        `;
         return false;
     }
 
