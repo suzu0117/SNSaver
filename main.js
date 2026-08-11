@@ -139,7 +139,7 @@ async function checkJob(id) {
     loadingMessage.innerHTML = "Waiting in queue... Please wait.";
     loading.classList.remove("hidden");
 
-    const downloadButton = document.getElementById("download__button");
+    const downloadButton = document.getElementById("download-button");
     let catchcount = 0;
     while (true) {
         try {
