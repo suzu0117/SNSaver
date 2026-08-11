@@ -255,12 +255,14 @@ footer {
 .section-title {
     font-weight: 600;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .contact-form {
-    width: 800px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 
 .contact-form__item {
@@ -416,5 +418,22 @@ footer {
 
     .user__count {
         font-size: 1.1rem;
+    }
+
+    .contact-form__item {
+        flex-direction: column;
+    }
+
+    .contact-form__label {
+        font-weight: 600;
+        padding-top: 0.5rem;
+    }
+
+    .contact-form__input,
+    .contact-form__textarea {
+        width: 100%;
+    }
+    .contact-form__button {
+        width: 100%;
     }
 }
