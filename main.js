@@ -132,7 +132,7 @@ function checkProfile(data) {
 async function checkJob(id) {
     const loading = document.getElementById("loading");
     const loadingMessage = document.getElementById("loading-message");
-    loadingMessage.innerHTML = "Preparing download... Please wait.";
+    loadingMessage.innerHTML = "Waiting in queue... Please wait.";
     loading.classList.remove("hidden");
 
     const downloadButton = document.getElementById("download__button");
@@ -140,7 +140,9 @@ async function checkJob(id) {
         const response = await fetch(`${server}/api/status/${id}`);
         const json = await response.json();
         const status = json.status;
-
+        if (status === "RUNNING") {
+            loadingMessage.innerHTML = "Preparing download... Please wait.";
+        }
         if (status === "FAILED") {
             loading.classList.add("hidden");
             break;
