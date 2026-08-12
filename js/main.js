@@ -25,26 +25,36 @@ searchButton.addEventListener("click", async () => {
 
     let imagesFlag = false;
     let videosFlag = false;
+    let reelsFlag = false;
 
     const mediaTypeAll = document.getElementById("media-type-all");
     if (mediaTypeAll.checked) {
         imagesFlag = true;
         videosFlag = true;
+        reelsFlag = true;
     }
 
     const mediaTypeImages = document.getElementById("media-type-images");
     if (mediaTypeImages.checked) {
         imagesFlag = true;
-        videosFlag = false;
     }
 
     const mediaTypeVideos = document.getElementById("media-type-videos");
     if (mediaTypeVideos.checked) {
-        imagesFlag = false;
         videosFlag = true;
     }
 
-    const response = await getPorfile(username, imagesFlag, videosFlag);
+    const mediaTypeReels = document.getElementById("media-type-reels");
+    if (mediaTypeReels.checked) {
+        reelsFlag = true;
+    }
+
+    const response = await getPorfile(
+        username,
+        imagesFlag,
+        videosFlag,
+        reelsFlag,
+    );
 
     const data = await displayProfile(response);
 
@@ -73,7 +83,7 @@ function initialize() {
     user.classList.remove("user-error");
 }
 
-async function getPorfile(username, imagesFlag, videosFlag) {
+async function getPorfile(username, imagesFlag, videosFlag, reelsFlag) {
     const loading = document.getElementById("loading");
     const loadingMessage = document.getElementById("loading-message");
     loadingMessage.innerHTML = "Checking user...";
@@ -86,6 +96,7 @@ async function getPorfile(username, imagesFlag, videosFlag) {
             username,
             imagesFlag,
             videosFlag,
+            reelsFlag,
         }),
     });
 
