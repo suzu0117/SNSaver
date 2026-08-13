@@ -208,7 +208,7 @@ async function checkJob(id) {
     return;
 }
 
-const contactFormButton = document.getElementById("contact-form-button");
+/*const contactFormButton = document.getElementById("contact-form-button");
 contactFormButton.addEventListener("click", async () => {
     const form = document.getElementById("contact-from");
     const name = form.name.value;
@@ -227,3 +227,4 @@ contactFormButton.addEventListener("click", async () => {
         }),
     });
 });
+*/
