@@ -1,7 +1,8 @@
 const server = "https://snsaver-render-api.onrender.com";
 
-const searchButton = document.getElementById("search-button");
-searchButton.addEventListener("click", async () => {
+const userserchForm = document.getElementById("usersearch-form");
+userserchForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
     initialize();
 
     let username;
