@@ -64,9 +64,10 @@ main {
     height: 40px;
     background-position: center;
     border: 1px solid #e2e2e2;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .media-type__item:hover + span {
@@ -76,8 +77,8 @@ main {
 }
 
 .media-type__item:checked + span {
-    background-color: #e2e2e2;
-    color: #0c1014;
+    background: linear-gradient(135deg, #f58529 0%, #e14f6a 50%, #f77777 100%);
+    color: #fff;
 }
 
 .username {
@@ -88,24 +89,26 @@ main {
     align-items: center;
     justify-content: space-between;
     border: 1px solid #e2e2e2;
-    border-radius: 5px;
+    border-radius: 50px;
     margin-top: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .username__input {
     flex: 1;
-    height: 50px;
+    height: 40px;
     padding-right: 20px;
     padding-left: 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     outline: none;
 }
 
 .username__search-button {
     background-image: url("../image/search_icon.png");
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 40px;
 }
 
 .user {
@@ -119,8 +122,9 @@ main {
     margin: 10px auto 0;
     overflow: hidden;
     border: 1px solid #e2e2e2;
-    border-radius: 5px;
-    background-color: #f2f3f5;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .user-error {
@@ -156,10 +160,14 @@ main {
     width: 200px;
     display: block;
     border-radius: 50%;
+    padding: 5px;
     margin-left: auto;
     margin-right: auto;
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+    border: 2px solid transparent;
 }
-
 .user__prolile-area {
     width: 55%;
 }
@@ -194,8 +202,8 @@ main {
 .loading__spinner {
     width: 40px;
     height: 40px;
-    border: 4px solid #ccc;
-    border-top: 4px solid #333;
+    border: 4px solid #f3d6d6;
+    border-top: 4px solid #e14f6a;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 20px auto 0;
@@ -226,18 +234,21 @@ main {
     height: 50px;
     background-position: center;
     border: 1px solid #e2e2e2;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #f58529 0%, #e14f6a 50%, #f77777 100%);
+    color: #fff;
 }
 
 .download-button:hover {
-    background-color: #e2e2e2;
+    background: linear-gradient(135deg, #ff9639 0%, #f0607f 50%, #ff8a8a 100%);
     transition-duration: 0.1s;
 }
 
 .download-button:disabled {
-    background-color: #e2e2e2;
+    background: #e2e2e2;
     color: #ccc;
 }
 
@@ -303,7 +314,7 @@ footer {
     height: 40px;
     background-position: center;
     border: 1px solid #e2e2e2;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     text-align: center;
 }
