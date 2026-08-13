@@ -438,3 +438,21 @@ footer {
 .hidden {
     display: none;
 }
+.contact-success {
+    text-align: center;
+    padding-top: 10%;
+}
+
+.contact-success__message {
+    font-size: 2rem;
+}
+
+.contact-success__link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.contact-success__link:hover {
+    text-decoration: none;
+}
