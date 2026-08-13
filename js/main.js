@@ -25,13 +25,11 @@ searchButton.addEventListener("click", async () => {
 
     let imagesFlag = false;
     let videosFlag = false;
-    let reelsFlag = false;
 
     const mediaTypeAll = document.getElementById("media-type-all");
     if (mediaTypeAll.checked) {
         imagesFlag = true;
         videosFlag = true;
-        reelsFlag = true;
     }
 
     const mediaTypeImages = document.getElementById("media-type-images");
@@ -43,18 +41,7 @@ searchButton.addEventListener("click", async () => {
     if (mediaTypeVideos.checked) {
         videosFlag = true;
     }
-
-    const mediaTypeReels = document.getElementById("media-type-reels");
-    if (mediaTypeReels.checked) {
-        reelsFlag = true;
-    }
-
-    const response = await getPorfile(
-        username,
-        imagesFlag,
-        videosFlag,
-        reelsFlag,
-    );
+    const response = await getPorfile(username, imagesFlag, videosFlag);
 
     const data = await displayProfile(response);
 
@@ -83,7 +70,7 @@ function initialize() {
     user.classList.remove("user-error");
 }
 
-async function getPorfile(username, imagesFlag, videosFlag, reelsFlag) {
+async function getPorfile(username, imagesFlag, videosFlag) {
     const loading = document.getElementById("loading");
     const loadingMessage = document.getElementById("loading-message");
     loadingMessage.innerHTML = "Checking user...";
@@ -96,7 +83,6 @@ async function getPorfile(username, imagesFlag, videosFlag, reelsFlag) {
             username,
             imagesFlag,
             videosFlag,
-            reelsFlag,
         }),
     });
 
