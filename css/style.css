@@ -103,6 +103,12 @@ main {
     outline: none;
 }
 
+.username__input:-webkit-autofill,
+.username__input:-webkit-autofill:hover,
+.username__input:-webkit-autofill:focus {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
 .username__search-button {
     background-image: url("../image/search_icon.png");
     background-size: contain;
